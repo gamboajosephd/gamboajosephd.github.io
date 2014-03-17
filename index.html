@@ -13,8 +13,10 @@
 
         <!-- Place favicon.ico and apple-touch-icon.png in the root directory -->
 
+        <!--
         <link rel="stylesheet" href="css/normalize.css">
-        <link rel="stylesheet" href="css/main.css">
+        <link rel="stylesheet" href="css/main.css"> -->
+        <link rel="stylesheet" href="css/style.css">
         <script src="js/vendor/modernizr-2.6.1.min.js"></script>
     </head>
     <body>
@@ -22,42 +24,57 @@
             <p class="chromeframe">You are using an outdated browser. <a href="http://browsehappy.com/">Upgrade your browser today</a> or <a href="http://www.google.com/chromeframe/?redirect=true">install Google Chrome Frame</a> to better experience this site.</p>
         <![endif]-->
 
-        <p>Today is the start of something beautiful.</p>
+        <header>  
+ <nav>
+  <ul>
+    <li><a href="#">Home</a></li>
+    <li><a href="#">About</a></li>
+    <li><a href="#">Contact</a></li>
+  </ul
+ </nav> 
+ <div class=social-link>
+  <ul>
+    <li class="social"><a href="https://github.com/gamboajosephd/"> <img src="img/github.png" /> </a> </li>
+    <li class="social"><a href="https://twitter.com/jofsef/"> <img src="img/twitter.png" /> </a> </li>      
+
+  </ul>
+</div>
+</header>
+
 
 <section id="recent-posts">
-  <h2>
+  <h2>My Recent Posts</h2>
   	<ul>
   	  
   	  <li>
   	  	<h3><a href="posts/2014/03/16/sample/">Sample</a></h3>
-  	  	  <div class="article-date"
+  	  	  <div class="article-date">
   	  	    2014-03-16 
   	  	</div>
   	  </li>
   	  
   	  <li>
   	  	<h3><a href="posts/2014/03/16/again-an-article/">Again, an article</a></h3>
-  	  	  <div class="article-date"
+  	  	  <div class="article-date">
   	  	    2014-03-16 
   	  	</div>
   	  </li>
   	  
   	  <li>
   	  	<h3><a href="posts/2014/03/16/another-article/">Another Article</a></h3>
-  	  	  <div class="article-date"
+  	  	  <div class="article-date">
   	  	    2014-03-16 
   	  	</div>
   	  </li>
   	  
   	  <li>
   	  	<h3><a href="posts/2014/03/16/sample-post/">Sample Post</a></h3>
-  	  	  <div class="article-date"
+  	  	  <div class="article-date">
   	  	    2014-03-16 
   	  	</div>
   	  </li>
   	   
-  	</ul>
-  </h2>
+  	</ul>  
 </section>
 
 
@@ -65,13 +82,14 @@
         <script>window.jQuery || document.write('<script src="js/vendor/jquery-1.8.0.min.js"><\/script>')</script>
         <script src="js/plugins.js"></script>
         <script src="js/main.js"></script>
-
+        
         <!-- Google Analytics: change UA-XXXXX-X to be your site's ID. -->
         <script>
             var _gaq=[['_setAccount','UA-XXXXX-X'],['_trackPageview']];
             (function(d,t){var g=d.createElement(t),s=d.getElementsByTagName(t)[0];
             g.src=('https:'==location.protocol?'//ssl':'//www')+'.google-analytics.com/ga.js';
             s.parentNode.insertBefore(g,s)}(document,'script'));
+            var nav = responsiveNav(".nav-collapse");
         </script>
     </body>
 </html>
