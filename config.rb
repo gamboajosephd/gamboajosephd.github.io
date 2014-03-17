@@ -89,7 +89,7 @@ set :markdown, fenced_code_blocks: true
 activate :deploy do |deploy|
   deploy.method = :git
   deploy.build_before = true
-  # deploy.branch = "master"
+  deploy.branch = "master"
 end
 
 
