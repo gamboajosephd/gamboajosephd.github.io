@@ -1,0 +1,94 @@
+/* imports */
+@import "normalize";
+@import "main"; 
+
+/* variable assignments */
+$gray-dark: #424242;
+
+
+/* navigation */
+
+header {
+	background-image: url("/img/plant2.jpg");
+	background-size: cover;
+	background-position: center top;
+	background-repeat: no-repeat;
+	background-size: 100%;
+	//padding: 500px 0 0 0;
+	min-height: 500px;
+	.social-link {
+		  position: relative;
+		  top: 420px;
+		  right: 50px;
+	ul li {
+		display: inline-block;
+	}
+
+}
+	nav {
+		//position: fixed; 
+		text-align: right;
+		padding: 50px 0 0 0; 
+		background-color: white;
+		opacity: 0.9;
+		width: 100%;
+		//text-transform: uppercase;
+		text-decoration: none;
+		//border-bottom: -20px;
+		ul {
+			list-style-type: none;
+			margin-top: -50px;				
+			li {
+				margin-top: 15px;
+				display: inline-block;
+								
+				list-style: none;
+				a {
+					text-decoration: none;
+					font-family: helvetica;
+					font-size: 14px;
+					color: $gray-dark;
+					margin-right: 50px;
+
+				}
+			}
+		}
+	}
+}
+
+body {
+	font-family: helvetica;
+	font-size: 12px;
+	color: $gray-dark;
+}
+
+/* media queries */
+
+@media screen and (max-width: 800px) {
+  header .social-link {
+    position: absolute;
+    top: 300px; right: 180px;
+  }
+}
+
+/* posts */
+
+#recent-posts {
+	margin-left: 200px;
+	left: 50px;
+	ul {
+		list-style-type: none;
+		margin-top: 2px;
+		li {
+			//margin-top: 2px;
+			a {
+				text-decoration: none;
+				font-size: 15px;
+				padding-top: 20px;
+				margin: auto;
+
+			}
+		}
+	}
+}
+
