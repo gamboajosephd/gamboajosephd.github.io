@@ -18,27 +18,29 @@
         <!--<link rel="stylesheet" href="css/normalize.css">        
         <link rel="stylesheet" href="css/style.css"> -->     
         <link href='http://fonts.googleapis.com/css?family=Open+Sans:300' rel='stylesheet' type='text/css'>
+        <link href='http://fonts.googleapis.com/css?family=Lato:300' rel='stylesheet' type='text/css'>
+        <link href='http://fonts.googleapis.com/css?family=Lusitana' rel='stylesheet' type='text/css'>
         <script src="js/vendor/modernizr-2.6.1.min.js"></script>       
     </head>
    
         <!--[if lt IE 7]>
             <p class="chromeframe">You are using an outdated browser. <a href="http://browsehappy.com/">Upgrade your browser today</a> or <a href="http://www.google.com/chromeframe/?redirect=true">install Google Chrome Frame</a> to better experience this site.</p>
         <![endif]-->
-         <body class="about about_index">       
+         <body>       
 
           <div class="post-wrap">
   	<nav>
   	  <ul>
-  	  	<li><a href="/">Life Carousel</a></li>
+  	  	<li><a href="/">Home</a></li>
   	  	<li><a href="../journal/">Journal</a></li>  	  
       </ul>
-    </nav>
+    </nav>  
 
     <div id="post-container">
       
       	<h1 id = "about-title">About Me</h1>
       	<div id="about me">
-          <p>Hi, my name is Joseph, an aspiring web designer/developer.<br><br>
+          <p>Hi, my name is Joseph, an aspiring Web Designer/Developer.<br><br>
 
             I recently started learning Web Development using Rails and its underlying language Ruby, and hope
             that in time I will become good and it. Who knows, I might be able to make some interesting
@@ -48,9 +50,38 @@
 
           </p>      		
       	</div> 
-      
+        <div id="disqus_thread"></div>
+            <script type="text/javascript">
+            //<![CDATA[
+                (function() {
+                    var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;
+                    dsq.src = '//gamboajosephdgithubio.disqus.com/embed.js';
+                    (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+                })();
+            //]]>
+            </script>
+            <noscript>Please enable JavaScript to view the <a href="http://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+            <a href="http://disqus.com" class="dsq-brlink">comments powered by <span class="logo-disqus">Disqus</span></a>
+        </script>       
     </div>
   </div>
+
+  <footer>
+  <section class="footer-1">  	
+    <ul>
+      <li class="social"><a href="https://github.com/gamboajosephd/"> <img src="../img/github.png" /> </a> </li>
+      <li class="social"><a href="https://twitter.com/jofsef/"> <img src="../img/twitter.png" /> </a> </li>
+    </ul>
+  </section>
+
+  <section class="footer-2">
+  	<h3> <a href="../">&#169 Life Carousel</a> </h3>  	
+  </section>
+</footer> 
+
+
+
+
       
 
         <script src="//ajax.googleapis.com/ajax/libs/jquery/1.8.0/jquery.min.js"></script>
