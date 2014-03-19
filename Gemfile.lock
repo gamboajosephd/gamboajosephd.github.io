@@ -61,6 +61,8 @@ GEM
       middleman-core (>= 3.0.0)
       net-sftp
       ptools
+    middleman-disqus (0.0.3)
+      middleman-core (>= 3.1.0)
     middleman-livereload (3.1.1)
       em-websocket (>= 0.2.0)
       middleman-core (>= 3.0.2)
@@ -74,10 +76,13 @@ GEM
     middleman-syntax (2.0.0)
       middleman-core (~> 3.2)
       rouge (~> 1.0)
+    mini_portile (0.5.2)
     multi_json (1.9.0)
     net-sftp (2.1.2)
       net-ssh (>= 2.6.5)
     net-ssh (2.8.0)
+    nokogiri (1.6.1)
+      mini_portile (~> 0.5.0)
     ptools (1.2.4)
     rack (1.5.2)
     rack-livereload (0.3.15)
@@ -119,7 +124,9 @@ DEPENDENCIES
   middleman (~> 3.2.2)
   middleman-blog
   middleman-deploy
+  middleman-disqus
   middleman-livereload (~> 3.1.0)
   middleman-syntax
+  nokogiri
   redcarpet
   wdm (~> 0.1.0)

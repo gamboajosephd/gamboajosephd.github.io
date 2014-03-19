@@ -1,35 +1,26 @@
 ---
 title: Home Page
 ---
-
-<header>  
- <nav>
-  <ul>
-    <li><a href="#">Home</a></li>
-    <li><a href="#">About</a></li>
-    <li><a href="#">Contact</a></li>
-  </ul
- </nav> 
- <div class=social-link>
-  <ul>
-    <li class="social"><% link_to 'https://github.com/gamboajosephd/' do %> <%= image_tag 'github.png' %> <% end %> </li>
-    <li class="social"><% link_to 'https://twitter.com/jofsef/' do %> <%= image_tag 'twitter.png' %> <% end %> </li>      
-
-  </ul>
-</div>
-</header>
-
-
+<div id="container">
+<%= partial "partials/header" %> 
 <section id="recent-posts">
   <h2>My Recent Posts</h2>
   	<ul>
-  	  <% blog.articles[0...5].each do |article| %>
+  	  <% blog.articles[0...2].each do |article| %>
   	  <li>
-  	  	<h3><%= link_to article.title, article %></h3>
+  	  	<h3 class="article-title"><%= link_to article.title, article %></h3>
   	  	  <div class="article-date">
   	  	    <%= article.date.strftime('%Y-%m-%d') %> 
-  	  	</div>
+  	  	  </div>
+          <div class="article-summary">
+            <%= article.summary(180, '  >>') %> 
+            <h5><%= link_to 'Read more', article %></h5> 
+
+          </div>
   	  </li>
   	  <% end %> 
   	</ul>  
 </section>
+</div>
+<%= partial "partials/footer"%> 
+

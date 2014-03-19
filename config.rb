@@ -71,7 +71,7 @@ configure :build do
 end
 
 activate :blog do |blog|
-  blog.prefix = "posts"
+  blog.prefix = "journal"
   blog.permalink = ":year/:month/:day/:title.html"
   #blog.sources = "/posts/:year-:month-:day-:title.html"
   blog.tag_template = "tag.html"
@@ -85,11 +85,16 @@ set :relative_links, true
 activate :syntax
 set :markdown_engine, :redcarpet
 set :markdown, fenced_code_blocks: true
+set :markdown, strikethrough: true
 
 activate :deploy do |deploy|
   deploy.method = :git
   deploy.build_before = true
   deploy.branch = "master"
+end
+
+activate :disqus do |d|
+  d.shortname = "gamboajosephdgithubio"
 end
 
 
