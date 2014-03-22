@@ -19,7 +19,7 @@ Oftentimes, all of the times, I would go to shopping malls just so I could spend
 
 Some of the memorable books I’ve read thus far include, 
 
-Atonement by Ian McEwan, a story of forgiveness, and of finding peace in one’s decisions. 
+[Atonement by Ian McEwan](http://www.amazon.com/Atonement-A-Novel-Ian-McEwan/dp/038572179X/ref=sr_1_1?ie=UTF8&qid=1395406290&sr=8-1&keywords=atonement), a story of forgiveness, and of finding peace in one’s decisions. 
 [Homo Faber by Max Frisch](http://www.amazon.com/Homo-Faber-Report-Max-Frisch/dp/0156421356/ref=sr_1_1?ie=UTF8&qid=1395221935&sr=8-1&keywords=homo+faber), a book about questioning life’s meaning written with such beautiful characters. 
 [The Book Thief by Markus Zusak](http://www.amazon.com/The-Book-Thief-Markus-Zusak/dp/0375842209/ref=sr_1_1?ie=UTF8&qid=1395222054&sr=8-1&keywords=the+book+thief), another World War II book, in itself a story about the love of reading books, and that of survival.
 Such classics as 1984, Lord of the Flies, To kill a Mockingbird, The Catcher in the Rye, Frank McCourt’s memoirs Angela’s Ashes and ’Tis, and Lolita are also worth the mention.
@@ -29,7 +29,7 @@ But one book that would always have a space in my bookshelf would be another cla
 >If all else perished, and he remained, I should still continue to be; and if all else 
 >remained, and he were annihilated, the universe would turn to a mighty stranger.
 
->                                        Emily Brontë, Wuthering Heights 
+>-Emily Brontë, Wuthering Heights
 
 At the end of all these revelations on books, a final begging question, how do I plan to use these books to help write my first code. I guess I would never have a straight answer to that. But I believe that in all these stories, both fiction and real, is an underlying motivation, a deep passion that feeds the creative soul, that when we assume other’s perspectives, we are able to gain fresher ways to solve problems.
 

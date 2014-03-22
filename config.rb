@@ -73,7 +73,6 @@ end
 activate :blog do |blog|
   blog.prefix = "journal"
   blog.permalink = ":year/:month/:day/:title.html"
-  #blog.sources = "/posts/:year-:month-:day-:title.html"
   blog.tag_template = "tag.html"
   blog.paginate = true
 end
@@ -84,8 +83,11 @@ set :relative_links, true
 
 activate :syntax
 set :markdown_engine, :redcarpet
-set :markdown, fenced_code_blocks: true
-set :markdown, strikethrough: true
+set :markdown, :fenced_code_blocks => true, 
+               :smartypants => true,
+               :autolink => true,
+               :strikethrough => true
+
 
 activate :deploy do |deploy|
   deploy.method = :git

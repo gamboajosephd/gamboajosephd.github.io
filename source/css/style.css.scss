@@ -22,7 +22,14 @@ $fontBody: 'Lusitana', serif, helvetica;
   background-position: center top;
   background-repeat: no-repeat;
   min-height: 300px;
+}
 
+.Hello.Middleman {
+  background-image: url("/img/terminal.jpg");
+  background-size: cover;
+  background-position: center top;
+  background-repeat: no-repeat;
+  min-height: 300px;
 }
 
 #home-bg{
@@ -458,5 +465,23 @@ blockquote pre {
     &:hover {
       color: darken($lightYellow, 5%);
     }
+  }
+}
+
+#post-content { 
+  
+  p img {
+    min-width: 80%;
+  }
+
+  pre {
+    background-color: lighten($gray-dark, 65%);
+    font-size: 80%;
+    padding: 10px 5px 10px 10px;
+    border-radius: 3px;
+    width: 100%; 
+    display: block; 
+    border: thin solid lighten($gray-dark, 50%);
+    box-shadow: 0 1px 2px 0 rgba(0, 0, 0, 0.20), 0 0 1px 1px rgba(255, 255, 255, 0.20) inset;
   }
 }
