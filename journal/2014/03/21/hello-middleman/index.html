@@ -1,0 +1,364 @@
+<!DOCTYPE html>
+<!--[if lt IE 7]>      <html class="no-js lt-ie9 lt-ie8 lt-ie7"> <![endif]-->
+<!--[if IE 7]>         <html class="no-js lt-ie9 lt-ie8"> <![endif]-->
+<!--[if IE 8]>         <html class="no-js lt-ie9"> <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js"> <!--<![endif]-->
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+        <!-- Use title if it's in the page YAML frontmatter -->
+        <title>Hello Middleman</title>
+        <meta name="description" content="">
+        <meta name="viewport" content="width=device-width">
+
+        <!-- Place favicon.ico and apple-touch-icon.png in the root directory -->
+        
+        <link href="../../../../../css/normalize.css" media="screen" rel="stylesheet" type="text/css" />
+        <link href="../../../../../css/style.css" media="screen" rel="stylesheet" type="text/css" />  
+        <!--<link rel="stylesheet" href="css/normalize.css">        
+        <link rel="stylesheet" href="css/style.css"> -->     
+        <link href='http://fonts.googleapis.com/css?family=Open+Sans:300' rel='stylesheet' type='text/css'>
+        <link href='http://fonts.googleapis.com/css?family=Lato:300' rel='stylesheet' type='text/css'>
+        <link href='http://fonts.googleapis.com/css?family=Lusitana' rel='stylesheet' type='text/css'>
+        <script src="js/vendor/modernizr-2.6.1.min.js"></script>       
+    </head>
+   
+        <!--[if lt IE 7]>
+            <p class="chromeframe">You are using an outdated browser. <a href="http://browsehappy.com/">Upgrade your browser today</a> or <a href="http://www.google.com/chromeframe/?redirect=true">install Google Chrome Frame</a> to better experience this site.</p>
+        <![endif]-->
+         <body>       
+
+          <header class="Hello Middleman">
+  </header>
+  <div class="post-wrap">
+  	<nav id="post-nav">
+  	  <ul>
+  	  	<li><a href="/">Home</a></li>
+  	  	<li><a href="../../../../">Journal</a></li>  	  
+      </ul>
+    </nav>
+
+    <div id="post-container">
+      <article>
+        <div id="post-content">
+      	<h1 id = "post-title">Hello Middleman</h1>
+        <h3 id="post-date">2014-03-21</h3>
+      	
+      		<p>There’s a new version of Wordpress again with ever more options, great. It’s neat, a white, blank page for writing, new icons, whistles and bells, tons of new options. Having all these features can only be a good thing right? Right? Yet there will always come the  time when  you just get tired of clicking the upgrade button, especially when all you want to do is publish some content, some static content. Who would’ve thought that it’s now a possibility thanks to static page generators, and they’ve been here for quite a while now without me having known about them.</p>
+
+<blockquote>
+<p>&ldquo;And so the Middleman stood at an open platform in the middle of the anxious crowd proclaiming,
+Listen, for I have found the answers to your questions!&rdquo;</p>
+
+<p>-They were probably a Wordpress crowd</p>
+</blockquote>
+
+<p>Having recently decided to get serious with Web development using Rails and it’s core language Ruby, I stumbled upon Middleman while scouring for Rails resources across the web, one of such static page generators that is based on Ruby itself. Being all excited about Rails, I thought I just had to give it a try, and oh how I enjoyed the process a lot.</p>
+
+<p>And here’s my novice’s approach to how I got Middleman working on my end.</p>
+
+<p>First, in order to get Middleman working you would need to have a working version of Ruby and RubyGems running on your system. If you are on a Mac,  that would also mean you already have Xcode, or at least the Command Line Tools for Xcode already installed. If you haven’t already done so, I found <a href="http://railsapps.github.io/installrubyonrails-mac.html">this article</a> by Daniel Kehoe of RailsApps to be extremely helpful. Ubuntu users can check his other post <a href="http://railsapps.github.io/installrubyonrails-ubuntu.html">here</a>. I’ve read that Rails or anything Ruby doesn’t really work well on Windows, so I won’t even try to go there.</p>
+
+<p>When you are ready to install Middleman, open the Terminal and type in:</p>
+<pre class="highlight shell"><span class="gp">$ </span>gem install middleman
+</pre>
+
+<p>And then you just wait until the gems finished  installing.</p>
+
+<p>Once done, you can start initialising new Middleman projects by typing the following:</p>
+<pre class="highlight shell"><span class="gp">$ </span>middleman init project_name
+</pre>
+
+<p>Middleman also includes different templates that you can start working with such as HTML5 Boilerplate, SMACSS, and Mobile Boilerplate.</p>
+
+<p>As I&rsquo;ve preferred to start with HTML5 Boilerplate, I can pass the following on the terminal instead.</p>
+<pre class="highlight shell"><span class="gp">$ </span>middleman init project_name —-template<span class="o">=</span>html5
+</pre>
+
+<p>A typical project directory would have files and folders as shown below. </p>
+
+<p><img title="Sample Screenshot" alt="Screenshot" src="../../../../../img/finder.png" /></p>
+
+<p>The &ldquo;source&rdquo; folder would be of special interest as it contains almost entirely all the files that we would be working with to deploy our static pages.</p>
+
+<h2>Adding additional gems to the Gemfile</h2>
+
+<p>Having originally planned to set up my site for blogging, and then subsequently deploy to Github pages, the following gems should be added to the  gemfile.</p>
+<pre class="highlight ruby"><span class="n">gem</span> <span class="err">“</span><span class="n">middleman</span><span class="o">-</span><span class="n">blog</span><span class="err">”</span>  <span class="c1">#middleman blogging feature</span>
+<span class="n">gem</span> <span class="err">“</span><span class="n">middleman</span><span class="o">-</span><span class="n">syntax</span><span class="err">”</span> <span class="c1">#syntax highlighting</span>
+<span class="n">gem</span> <span class="err">“</span><span class="n">redcarpet</span><span class="err">”</span> <span class="c1">#markdown engine</span>
+<span class="n">gem</span> <span class="err">“</span><span class="n">nokogiri</span><span class="err">”</span> <span class="c1">#needed for adding article summaries, say article links on the homepage</span>
+<span class="n">gem</span> <span class="err">“</span><span class="n">middleman</span><span class="o">-</span><span class="n">disqus</span><span class="err">”</span> <span class="c1">#adds disqus commenting tool</span>
+<span class="n">gem</span> <span class="s2">"middleman-deploy"</span> <span class="c1">#tool for deploying site to GitHub Pages.</span>
+</pre>
+
+<p>After saving the Gemfile, you need to run bundler and wait a few moments to have have the new gems installed.</p>
+<pre class="highlight shell"><span class="gp">$ </span>bundle install
+</pre>
+
+<h2>Updating Site Configurations with config.rb</h2>
+
+<p>After installing the necessary gems needed for the blog-site, we can now start updating the needed configurations on the config.rb to access some gem functionalities.</p>
+<pre class="highlight ruby"><span class="n">activate</span> <span class="ss">:blog</span> <span class="k">do</span> <span class="o">|</span><span class="n">blog</span><span class="o">|</span>
+  <span class="n">blog</span><span class="p">.</span><span class="nf">prefix</span> <span class="o">=</span> <span class="s2">"journal"</span>
+  <span class="n">blog</span><span class="p">.</span><span class="nf">permalink</span> <span class="o">=</span> <span class="s2">":year/:month/:day/:title.html"</span>
+  <span class="n">blog</span><span class="p">.</span><span class="nf">tag_template</span> <span class="o">=</span> <span class="s2">"tag.html"</span>
+  <span class="n">blog</span><span class="p">.</span><span class="nf">paginate</span> <span class="o">=</span> <span class="kp">true</span>
+<span class="k">end</span>
+</pre>
+
+<p>A blog prefix of your choice, along with the permalink setting and the following config, enables the creation of pretty URLs as shown on the succeeding image.</p>
+<pre class="highlight ruby"><span class="n">activate</span> <span class="ss">:directory_indexes</span>
+</pre>
+
+<p><img title="Sample Screenshot" alt="Screenshot" src="../../../../../img/finder2.png" /></p>
+
+<h2>Markdown Settings</h2>
+
+<p>One positive appeal of Middleman is the ability to use a Markdown tool right straight from a text editor and be able to do editing straight from there, Sublime Text 2 on my system.</p>
+
+<p>As I&rsquo;ve read on other blogs, I&rsquo;ve chosen to use Redcarpet, a better Markdown renderer, as opposed to Middleman&rsquo;s default Markdown renderer.</p>
+
+<p>You can add the following to the config.rb file.</p>
+<pre class="highlight ruby"><span class="n">activate</span> <span class="ss">:syntax</span>
+<span class="n">set</span> <span class="ss">:markdown_engine</span><span class="p">,</span> <span class="ss">:redcarpet</span>
+<span class="n">set</span> <span class="ss">:markdown</span><span class="p">,</span> <span class="ss">:fenced_code_blocks</span> <span class="o">=&gt;</span> <span class="kp">true</span><span class="p">,</span> 
+               <span class="ss">:smartypants</span> <span class="o">=&gt;</span> <span class="kp">true</span><span class="p">,</span>
+               <span class="ss">:autolink</span> <span class="o">=&gt;</span> <span class="kp">true</span><span class="p">,</span>
+               <span class="ss">:strikethrough</span> <span class="o">=&gt;</span> <span class="kp">true</span>
+</pre>
+
+<p>A Markdown Cheatsheet can also be found on this <a href="https://github.com/adam-p/markdown-here/wiki/Markdown-Cheatsheet/03ea478e05e31c753a188dcbaf9a7a202a959c36">link</a>.</p>
+
+<h2>Making the actual Site Layout</h2>
+
+<p>After updating the config file, it&rsquo;s now time to do the the main part to make it a functional blogging page.</p>
+
+<p>The biggest challenge might be to figure out the look of your page, maybe a typical homepage with links to recent blog posts, and the usual common <em>About</em>, and the <em>Blog</em> page itself would do just fine for now.</p>
+
+<p>Now would also be a good time to run the development server that ships with Middleman to get us going. On the terminal, you type in:</p>
+<pre class="highlight ruby"><span class="err">$</span> <span class="n">middleman</span> <span class="n">server</span>
+</pre>
+
+<p>or just</p>
+<pre class="highlight ruby"><span class="err">$</span> <span class="n">middleman</span>
+</pre>
+
+<p>will do just fine. You can now access it through your Web browser at 127.0.0.1:4567, or the more known, localhost:4567.</p>
+
+<p>Opening the project directory, we can start with the index.html.erb, as shown below.</p>
+
+<p><img title="Sample Screenshot" alt="Screenshot" src="../../../../../img/finder3.png" /></p>
+
+<h4>Frontmatter</h4>
+<pre class="highlight plaintext">---
+title: "Home Page"
+---
+</pre>
+
+<p>Frontmatter, using the YAML format <em>(leading and trailing - - -)</em> as shown above allows us to add different variables to a page. Depending on a page&rsquo;s requirements, a blog post page can have the following variables, <em>title</em>, <em>tags</em>, <em>date</em>, or even a blog page specific <em>layout</em> template.</p>
+
+<h4>Partials</h4>
+
+<p>Partials provide a convenient way to reuse site common parts such as the header and footer sections, saving us from code repetitions.</p>
+
+<p>A code partial is shown below, using the ERB template.</p>
+<pre class="highlight erb"><span class="cp">&lt;%=</span> <span class="n">partial</span> <span class="s2">"partials/header"</span> <span class="cp">%&gt;</span> 
+</pre>
+
+<h4>Link Helpers</h4>
+
+<p>Middleman also provides some code snippets functionalities based on the <a href="http://www.padrinorb.com/guides/application-helpers">Padrino Framework</a>. As someone trying to learn Rails, this can only be a good thing, as they&rsquo;re similar to Rails&#39; View Helpers.</p>
+<pre class="highlight erb"><span class="cp">&lt;%=</span> <span class="n">link_to</span> <span class="s1">'Read more'</span><span class="p">,</span> <span class="n">article</span> <span class="cp">%&gt;</span>
+</pre>
+
+<h4>Showing a List of Recent Blog Posts</h4>
+
+<p>The following, a combination of basic html markup and helpers can be used to show a list of recent articles <em>(two articles as shown along with the article&rsquo;s title, date, and summary with 180 characters).</em></p>
+<pre class="highlight erb"><span class="nt">&lt;ul&gt;</span>
+  <span class="cp">&lt;%</span> <span class="n">blog</span><span class="p">.</span><span class="nf">articles</span><span class="o">[</span><span class="mi">0</span><span class="p">.</span><span class="nf">.</span><span class="o">.</span><span class="mi">2</span><span class="o">]</span><span class="p">.</span><span class="nf">each</span> <span class="k">do</span> <span class="o">|</span><span class="n">article</span><span class="o">|</span> <span class="cp">%&gt;</span>
+    <span class="nt">&lt;li&gt;</span>
+      <span class="nt">&lt;h3</span> <span class="na">class=</span><span class="s">"article-title"</span><span class="nt">&gt;</span><span class="cp">&lt;%=</span> <span class="n">link_to</span> <span class="n">article</span><span class="p">.</span><span class="nf">title</span><span class="p">,</span> <span class="n">article</span> <span class="cp">%&gt;</span><span class="nt">&lt;/h3&gt;</span>
+        <span class="nt">&lt;div</span> <span class="na">class=</span><span class="s">"article-date"</span><span class="nt">&gt;</span>
+          <span class="cp">&lt;%=</span> <span class="n">article</span><span class="p">.</span><span class="nf">date</span><span class="p">.</span><span class="nf">strftime</span><span class="p">(</span><span class="s1">'%Y-%m-%d'</span><span class="p">)</span> <span class="cp">%&gt;</span> 
+        <span class="nt">&lt;/div&gt;</span>
+        <span class="nt">&lt;div</span> <span class="na">class=</span><span class="s">"article-summary"</span><span class="nt">&gt;</span>
+          <span class="cp">&lt;%=</span> <span class="n">article</span><span class="p">.</span><span class="nf">summary</span><span class="p">(</span><span class="mi">180</span><span class="p">,</span> <span class="s1">'  &gt;&gt;'</span><span class="p">)</span> <span class="cp">%&gt;</span> 
+          <span class="nt">&lt;h5&gt;</span><span class="cp">&lt;%=</span> <span class="n">link_to</span> <span class="s1">'Read more'</span><span class="p">,</span> <span class="n">article</span> <span class="cp">%&gt;</span><span class="nt">&lt;/h5&gt;</span> 
+        <span class="nt">&lt;/div&gt;</span>
+    <span class="nt">&lt;/li&gt;</span>
+  <span class="cp">&lt;%</span> <span class="k">end</span> <span class="cp">%&gt;</span> 
+<span class="nt">&lt;/ul&gt;</span>
+</pre>
+
+<h4>Adding Additional Page Layouts.</h4>
+
+<p>As I&rsquo;ve chosen to have a different layout for my blog posts, I&rsquo;ve added an additional <em>post.erb</em> file on the <em>layout</em> folder, along with the existing <em>layout.erb</em> file. </p>
+
+<p>The following lists a basic form of the code.</p>
+<pre class="highlight erb"><span class="cp">&lt;%</span> <span class="n">wrap_layout</span> <span class="ss">:layout</span> <span class="k">do</span> <span class="cp">%&gt;</span>
+  <span class="nt">&lt;article&gt;</span>
+    <span class="cp">&lt;%=</span> <span class="k">yield</span> <span class="cp">%&gt;</span> #shows the actual content of each individual post.
+  <span class="nt">&lt;/article&gt;</span>
+    <span class="cp">&lt;%=</span> <span class="n">disqus</span> <span class="cp">%&gt;</span> #shows the disqus section, see disqus section below. 
+<span class="cp">&lt;%</span> <span class="k">end</span> <span class="cp">%&gt;</span>
+</pre>
+
+<h4>Adding Additional Page Links <em>(About, Blog)</em></h4>
+
+<p>Adding additional link pages such as the About and Blog page<em>(called mine Journal),</em> is pretty much straightforward, just add the files with <em>.html.erb</em> extensions to the <em>source</em> root folder.</p>
+
+<p>The following shows a snippet of the content of my About Page,</p>
+<pre class="highlight erb">---
+title: About Me
+---
+
+...
+
+<span class="cp">&lt;%=</span> <span class="n">partial</span> <span class="s2">"partials/footer"</span><span class="cp">%&gt;</span> 
+</pre>
+
+<h4>Disqus Comments</h4>
+
+<p>As we&rsquo;ve already added the disqus gem to the Gemfile, we can just enable it on the <em>config.rb</em> file using the following code.</p>
+<pre class="highlight erb">activate :disqus do |d|
+  d.shortname = "disqus-shortname"
+end
+</pre>
+
+<p>Additional options can be found <a href="https://github.com/simonrice/middleman-disqus">here</a>, such as excluding the disqus plugin in development stage.</p>
+
+<h4>Generating Blog Posts</h4>
+
+<p>Creating a new article for the blog can now be initiated by typing the following on the terminal,</p>
+<pre class="highlight shell"><span class="gp">$ </span>middleman article <span class="s2">"Title"</span>
+</pre>
+
+<p>And then additional options can be used on the article page&rsquo;s frontmatter itself, such as to use the custom <em>&ldquo;post&rdquo;</em> layout we&rsquo;ve created.</p>
+<pre class="highlight erb">---
+layout: "post"
+title: Title
+date: 2014-03-21 09:48 UTC #automatically generated
+tags: #add your tags here
+---
+</pre>
+
+<h4>Sass CSS</h4>
+
+<p>It&rsquo;s also worth mentioning that Middleman uses <em>Sprockets</em>, similar to Rails&#39; Asset Pipeline, that magically streamlines CSS and JavaScript assets for production.</p>
+
+<p>Although I&rsquo;m also just beginning to familiarise myself with Sass, I&rsquo;ve found its features such as variable assignments, nesting, and mixins to be extremely useful.</p>
+
+<p>The following code snippet is one such example:</p>
+<pre class="highlight css"><span class="err">$</span><span class="nt">gray-dark</span><span class="o">:</span> <span class="nf">#424242</span><span class="o">;</span>
+<span class="err">$</span><span class="nt">fontFamily</span><span class="o">:</span> <span class="nt">helvetica</span><span class="o">,</span> <span class="nt">serif</span><span class="o">;</span>
+<span class="o">...</span>
+
+<span class="nf">#site-logo</span> <span class="nt">a</span> <span class="p">{</span>  
+  <span class="nl">color</span><span class="p">:</span> <span class="n">lighten</span><span class="p">(</span><span class="err">$</span><span class="n">gray-dark</span><span class="p">,</span> <span class="m">15</span><span class="err">%</span><span class="p">);</span>
+  <span class="nl">font-family</span><span class="p">:</span> <span class="err">$</span><span class="n">fontFamily</span><span class="p">;</span> 
+
+  <span class="err">&amp;:hover</span> <span class="err">{</span>
+    <span class="nl">opacity</span><span class="p">:</span> <span class="m">0.8</span><span class="p">;</span>
+  <span class="p">}</span>
+<span class="err">}</span>
+</pre>
+
+<h4>Deploying to GitHub Pages</h4>
+
+<p>As originally planned, after finishing a working version of the site, we are now ready to deploy it to GitHub Pages. If you haven&rsquo;t done setting up your Github page yet, you can do so now by checking this <a href="http://pages.github.com/">link.</a></p>
+
+<p>Some settings need to be activated on the <em>config.rb</em> file to enable the Deploy gem.</p>
+<pre class="highlight erb">activate :deploy do |deploy|
+  deploy.method = :git
+  deploy.build_before = true
+  deploy.branch = "master"
+end
+</pre>
+
+<p>We can also push our work to GitHub at this point.</p>
+<pre class="highlight shell"><span class="gp">$ </span>git add -A
+<span class="gp">$ </span>git commit -m <span class="s2">"Initial commit to Middleman Page"</span>
+</pre>
+
+<p>As shown on the code above, our static page will be pushed on the <em>master</em> branch, so we&rsquo;d need to move our master branch&#39; contents to another branch, calling it <em>source</em>, then pushing our commit there.</p>
+<pre class="highlight shell"><span class="gp">$ </span>git branch <span class="nb">source </span>master
+<span class="gp">$ </span>git checkout <span class="nb">source</span>
+<span class="gp">$ </span>git push origin <span class="nb">source</span>
+</pre>
+
+<p>Finally, we can now deploy to Github pages with the following code,</p>
+<pre class="highlight shell"><span class="gp">$ </span>middleman deploy
+</pre>
+
+<p>Woot! Congratulations on publishing your first Middleman static site! The <em>middleman-deploy</em> gem offers additional options, case you&rsquo;d want to publish to traditional shared hosting through <em>ftp</em>. They can be found <a href="https://github.com/tvaughan/middleman-deploy">here</a>.</p>
+
+<p>Here&rsquo;s an image of my homepage</p>
+
+<p><img title="Sample Screenshot" alt="Screenshot" src="../../../../../img/finder4.png" /></p>
+
+<h4>Conclusions</h4>
+
+<p>I hope I was able to shed some light on my process of working with Middleman and publish my content to GitHub Pages, and managed to encourage you quite a bit to give it a try yourself, if you haven&rsquo;t already done so, and when you do, you&rsquo;d certainly be rewarded for your efforts.</p>
+
+<p>With Middleman&rsquo;s many similarities to Rails&#39; functionalities because of the shared Ruby language, I feel like I am now more ready to dive in to Rails&#39; complex world.</p>
+
+<h4>Further Readings</h4>
+
+<ol>
+<li><p>Lots of other information can be found on <a href="http://middlemanapp.com/basics/getting-started/">Middleman&rsquo;s Documentation Page</a> itself, well-written and always useful.  </p></li>
+<li><p>I found this blog posts to be also highly useful: <a href="http://fajitanachos.com/Goodbye-jekyll/">here</a> and <a href="http://juliepagano.com/blog/2013/11/10/site-redesign-using-middleman/">here</a>.</p></li>
+<li><p>Please feel free to also check my actual <a href="https://github.com/gamboajosephd/gamboajosephd.github.io">Github Page</a> repo to see the basic file structures, and copy codes when you need to. I realised that it&rsquo;s actually really helpful to check other people&rsquo;s implementation just to get the ground running. Finally, I suggest you keep on breaking stuff until you understand the concepts, until you like what you&rsquo;ve accomplished, until you can be proud enough to show it the world. Have fun learning!</p></li>
+</ol>
+
+<p>I know I&rsquo;ve missed a lot more on this post, and would love to hear what you have to say on the comments below.</p>
+
+      	</div> 
+      </article>
+      <div id="disqus">
+    <div id="disqus_thread"></div>
+            <script type="text/javascript">
+            //<![CDATA[
+                (function() {
+                    var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;
+                    dsq.src = '//gamboajosephdgithubio.disqus.com/embed.js';
+                    (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+                })();
+            //]]>
+            </script>
+            <noscript>Please enable JavaScript to view the <a href="http://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+            <a href="http://disqus.com" class="dsq-brlink">comments powered by <span class="logo-disqus">Disqus</span></a>
+        </script>
+    </div> 
+    </div>
+  </div>
+  <footer>
+  <section class="footer-1">  	
+    <ul>
+      <li class="social"><a href="https://github.com/gamboajosephd/"> <img src="../../../../../img/github.png" /> </a> </li>
+      <li class="social"><a href="https://twitter.com/jofsef/"> <img src="../../../../../img/twitter.png" /> </a> </li>
+    </ul>
+  </section>
+
+  <section class="footer-2">
+  	<h3> <a href="../../../../../">&#169 Life Carousel</a> </h3>  	
+  </section>
+</footer> 
+
+      
+
+        <script src="//ajax.googleapis.com/ajax/libs/jquery/1.8.0/jquery.min.js"></script>
+        <script>window.jQuery || document.write('<script src="js/vendor/jquery-1.8.0.min.js"><\/script>')</script>
+        <script src="js/plugins.js"></script>
+        <script src="js/main.js"></script>
+        
+        <!-- Google Analytics: change UA-XXXXX-X to be your site's ID. -->
+        <script>
+            var _gaq=[['_setAccount','UA-XXXXX-X'],['_trackPageview']];
+            (function(d,t){var g=d.createElement(t),s=d.getElementsByTagName(t)[0];
+            g.src=('https:'==location.protocol?'//ssl':'//www')+'.google-analytics.com/ga.js';
+            s.parentNode.insertBefore(g,s)}(document,'script'));            
+        </script>
+    </body>
+</html>
+ 
