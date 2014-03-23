@@ -14,6 +14,15 @@ $fontFamily: 'Open Sans', helvetica;
 $fontLogo : 'Lato', helvetica;
 $fontBody: 'Lusitana', serif, helvetica;
 
+$transition: all 0.4s ease 0s;
+
+@mixin transition {
+  -webkit-transition: $transition;
+  -moz-transition: $transition;
+  -ms-transition: $transition;
+  transition: $transition;
+}
+
 /* navigation */
 
 .An.Ode.to.Books {
@@ -79,6 +88,7 @@ header {
     
       &:hover {
         opacity: 0.8;
+        @include transition;
       }
         }
     }     
@@ -98,6 +108,7 @@ header {
   
   &:hover {
     opacity: 0.8;
+    @include transition;
   }
 }
 
@@ -149,7 +160,7 @@ body {
     text-decoration: none;
     
     &:hover {
-    color: $green-light;
+    color: lighten($lightYellow, 5%);
     }
   }
 }
@@ -165,10 +176,11 @@ body {
   border: 1px solid lighten($gray-dark, 58%);
   box-shadow: 0 1px 3px 0 rgba(0, 0, 0.20, 0.20), 0 0 1px 1px rgba(255, 255, 255, 0.20) inset;
 
-
-  
   &:hover {
-    color: white;    
+    color: white;
+    background-color: lighten($lightYellow, 5%);
+    border: 1px solid lighten($lightYellow, 10%);
+    @include transition;       
   }
 }
 
@@ -193,6 +205,7 @@ footer {
       padding-right: 30px;
       &:hover {
         opacity: 0.8;
+        @include transition;
       }
     }     
     }
@@ -244,6 +257,7 @@ footer {
       
           &:hover {
           color: darken($lightYellow, 5%);
+          @include transition;
           }
         }
       }
