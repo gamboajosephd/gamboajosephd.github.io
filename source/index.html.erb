@@ -13,9 +13,8 @@ title: Home Page
   	  	    <%= article.date.strftime('%e %B, %Y') %> 
   	  	  </div>
           <div class="article-summary">
-            <%= article.summary(180, '  >>') %> 
-            <h5><%= link_to 'Read more', article %></h5> 
-
+            <%= article.summary(190, '  ...') %> 
+            <h5><%= link_to 'Read more', article %></h5>
           </div>
   	  </li>
   	  <% end %> 
