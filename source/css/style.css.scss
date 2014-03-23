@@ -166,20 +166,20 @@ body {
 }
 
 .article-summary h5 a {
-  color: lighten($gray-dark, 5%); 
+  color: darken($lightYellow, 34%);   
   font-size: 110%;
   font-weight: lighter;
   margin-left: 0px;
   text-decoration: none;
   padding: 10px;
-  background-color: lighten($gray-dark, 60%);
-  border: 1px solid lighten($gray-dark, 58%);
+  background-color: lighten($lightYellow, 10%);
+  border: 1px solid lighten($lightYellow, 15%);
   box-shadow: 0 1px 3px 0 rgba(0, 0, 0.20, 0.20), 0 0 1px 1px rgba(255, 255, 255, 0.20) inset;
 
-  &:hover {
-    color: white;
-    background-color: lighten($lightYellow, 5%);
-    border: 1px solid lighten($lightYellow, 10%);
+  &:hover {     
+    color: lighten($gray-dark, 15%); 
+    background-color: lighten($gray-dark, 60%);
+    border: 1px solid lighten($gray-dark, 58%);
     @include transition;       
   }
 }
