@@ -7,7 +7,7 @@ tags:
 
 There’s a new version of Wordpress again with ever more options, great. It’s neat, a white, blank page for writing, new icons, whistles and bells, tons of new options. Having all these features can only be a good thing right? Right? Yet there will always come the  time when  you just get tired of clicking the upgrade button, especially when all you want to do is publish some content, some static content. Who would’ve thought that it’s now a possibility thanks to static page generators, and they’ve been here for quite a while now without me having known about them.
 
-> "And so the Middleman stood at an open platform in the middle of the anxious crowd proclaiming,
+> "And so the Middleman stood at the open platform in the middle of the anxious crowd proclaiming,
 > Listen, for I have found the answers to your questions!"
 
 > -They were probably a Wordpress crowd
@@ -176,7 +176,7 @@ The following, a combination of basic html markup and helpers can be used to sho
   <% end %> 
 </ul>
 ```
-####Adding Additional Page Layouts.
+####Adding Additional Page Layouts
 
 As I've chosen to have a different layout for my blog posts, I've added an additional _post.erb_ file on the _layout_ folder, along with the existing _layout.erb_ file. 
 
@@ -306,7 +306,7 @@ With Middleman's many similarities to Rails' functionalities because of the shar
 
 1. Lots of other information can be found on [Middleman's Documentation Page](http://middlemanapp.com/basics/getting-started/) itself, well-written and always useful.  
 
-2. I found this blog posts to be also highly useful: [here](http://fajitanachos.com/Goodbye-jekyll/) and [here](http://juliepagano.com/blog/2013/11/10/site-redesign-using-middleman/).
+2. I found these blog posts to be also highly useful: [here](http://fajitanachos.com/Goodbye-jekyll/) and [here](http://juliepagano.com/blog/2013/11/10/site-redesign-using-middleman/).
 
 3. Please feel free to also check my actual [Github Page](https://github.com/gamboajosephd/gamboajosephd.github.io) repo to see the basic file structures, and copy codes when you need to. I realised that it's actually really helpful to check other people's implementation just to get the ground running. Finally, I suggest you keep on breaking stuff until you understand the concepts, until you like what you've accomplished, until you can be proud enough to show it the world. Have fun learning!
 

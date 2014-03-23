@@ -6,11 +6,11 @@ title: Home Page
 <section id="recent-posts">
   <h2>My Recent Posts</h2>
   	<ul>
-  	  <% blog.articles[0...2].each do |article| %>
+  	  <% blog.articles[0...3].each do |article| %>
   	  <li>
   	  	<h3 class="article-title"><%= link_to article.title, article %></h3>
   	  	  <div class="article-date">
-  	  	    <%= article.date.strftime('%Y-%m-%d') %> 
+  	  	    <%= article.date.strftime('%e %B, %Y') %> 
   	  	  </div>
           <div class="article-summary">
             <%= article.summary(180, '  >>') %> 

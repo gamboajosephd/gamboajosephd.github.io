@@ -2,27 +2,27 @@
   <header class="<%= current_page.title %>">
   </header>
   <div class="post-wrap">
-  	<nav id="post-nav">
+    <nav id="post-nav">
   	  <ul>
-  	  	<li><a href="/">Home</a></li>
+  	    <li><a href="/">Home</a></li>
   	  	<li><%= link_to "Journal", "/journal.html" %></li>  	  
       </ul>
     </nav>
 
     <div id="post-container">
-      <article>
-        <div id="post-content">
-      	<h1 id = "post-title"><%= current_page.title %></h1>
-        <h3 id="post-date"><%= current_article.date.strftime('%Y-%m-%d') %></h3>
-      	
-      		<%= yield %>
-      	</div> 
-      </article>
-      <div id="disqus">
-    <%= disqus %>
+    <article>
+      <div id="post-content">
+        <h1 id = "post-title"><%= current_page.title %></h1>
+        <h3 id="post-date"><%= current_article.date.strftime('%e %B, %Y') %></h3>      	
+      	  <%= yield %>
+      </div> 
+    </article>
+      
+    <div id="disqus">
+      <%= disqus %>
     </div> 
-    </div>
   </div>
+  
   <%= partial "partials/footer"%> 
 
 <% end %> 
