@@ -304,6 +304,15 @@ footer {
   }
 }
 
+.journal-bg {
+  background-image: url("/img/journal.jpg");
+  background-size: cover;
+  background-position: center top;
+  background-repeat: no-repeat;
+  min-height: 350px;
+}
+  
+
 #post-container {
   width: 50%;
   min-height: 100%;
