@@ -53,20 +53,22 @@ header {
   
   nav {
   text-align: right;
-  padding: 5px 0 0 0; 
+  padding: 2px 0 0 0; 
   background-color: white;
   opacity: 0.9;
   width: 100%;
   text-decoration: none;
-  margin-top: -1%;
+  margin-top: 0;
+  //margin-bottom: -20%;
     
   ul {
     list-style-type: none;
-    margin-top: 0px; 
+    margin-top: 2%; 
+    margin-bottom: 0;
 
     
     li {
-      margin-top: 10px;
+      //margin-top: 0;      
       display: inline-block;    
       list-style: none;
 
@@ -78,10 +80,9 @@ header {
       font-weight: normal;      
       font-size: 14px;
       color: $gray-dark;
-      margin-right: 30px;
+      margin-right: 30px;      
       background-color: lighten($lightYellow, 15%);
-      padding: 2px 10px 1px 10px;
-      margin-bottom: 0px;
+      padding: 2px 10px 2px 10px;      
       box-shadow: 0 1px 2px 0 rgba(0, 0, 0, 0.20), 0 0 1px 1px rgba(255, 255, 255, 0.20) inset;
       border-radius: 2px 2px 0 0;
       border: 1px solid darken($lightYellow, 5%);
@@ -524,3 +525,59 @@ blockquote pre {
     box-shadow: 0 1px 2px 0 rgba(0, 0, 0, 0.20), 0 0 1px 1px rgba(255, 255, 255, 0.20) inset;
   }
 }
+
+/* Image Slider */
+
+.fader {
+  position: relative;
+  padding-top: 40%;
+  overflow: hidden;
+  border-top: -5%; 
+  margin-top: 0;   
+} 
+ 
+.fader .slide {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  top: 0;
+  z-index: 1;
+  opacity: 0;
+}
+ 
+.fader img.slide{
+  height: auto;
+}
+
+.fader .prev,
+.fader .next{
+  position: absolute;
+  height: 80px;
+  line-height: 55px;
+  width: 50px;
+  font-size: 100px;
+  text-align: center;
+  color: #fff;
+  top: 50%;
+  left: 0;
+  z-index: 4;
+  margin-top: -25px;
+  cursor: pointer;
+  opacity: .2;
+  transition: all 150ms;
+}
+
+.fader .prev:hover,
+.fader .next:hover{
+  opacity: .6;
+  -webkit-transition: all .5s ease-in-out;
+  -moz-transition: all .5s ease-in-out;
+  -o-transition: all .5s ease-in-out;
+  transition: all .5s ease-in-out;
+}
+
+.fader .next{
+  left: auto;
+  right: 0;
+}
+
