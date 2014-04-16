@@ -444,6 +444,10 @@ footer {
   #post-container h1 {
     font-size: 200%;  
   }
+
+  .fader .pager_list {
+    display: none;
+  }
 }
 
 body {  
@@ -579,5 +583,33 @@ blockquote pre {
 .fader .next{
   left: auto;
   right: 0;
+}
+
+.fader .pager_list {
+  position: absolute;
+  width: 92.50%;
+  height: 15px;
+  line-height: 40px;
+  bottom: 0;
+  text-align: center;  
+  z-index: 4;    
+}
+
+.fader .pager_list li {
+  display: inline-block;
+  width: 10px;
+  height: 10px;
+  margin: 0 6px;
+  background: #fff;
+  opacity: .3;
+  text-indent: -999em;
+  border-radius: 999px;
+  cursor: pointer;
+  transition: all 150ms;  
+}
+
+.fader .pager_list li:hover,
+.fader .pager_list li.active{
+  opacity: .6;
 }
 
