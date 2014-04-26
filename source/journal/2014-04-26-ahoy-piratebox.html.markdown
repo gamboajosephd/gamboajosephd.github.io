@@ -15,7 +15,7 @@ With the ever increasing threats to online security, governments spying on ordin
 
 One day I was browsing through the web when I ran across the following YouTube video that addresses this very specific need for anonymous collaboration.
 
-<iframe width="560" height="315" src="//www.youtube.com/embed/iwVrYzbWUo8" frameborder="0" allowfullscreen></iframe>
+<iframe width="100%" height="350" src="//www.youtube.com/embed/iwVrYzbWUo8" frameborder="0" allowfullscreen></iframe>
 
 
 ##The PirateBox
