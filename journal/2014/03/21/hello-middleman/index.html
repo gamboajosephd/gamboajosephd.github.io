@@ -13,13 +13,12 @@
 
         <!-- Place favicon.ico and apple-touch-icon.png in the root directory -->
         
-        <link href="../../../../../css/normalize.css" media="screen" rel="stylesheet" type="text/css" />
-        <link href="../../../../../css/style.css" media="screen" rel="stylesheet" type="text/css" />  
-        <!--<link rel="stylesheet" href="css/normalize.css">        
-        <link rel="stylesheet" href="css/style.css"> -->     
-        <link href='http://fonts.googleapis.com/css?family=Open+Sans:300' rel='stylesheet' type='text/css'>
-        <link href='http://fonts.googleapis.com/css?family=Lato:300' rel='stylesheet' type='text/css'>
-        <link href='http://fonts.googleapis.com/css?family=Lusitana' rel='stylesheet' type='text/css'>
+        <link href="../../../../../css/normalize-ec2a8901.css" media="screen" rel="stylesheet" type="text/css" />
+<link href="../../../../../css/style-06708b76.css" media="screen" rel="stylesheet" type="text/css" /> 
+
+        <link href='http://fonts.googleapis.com/css?family=Lato:100,400' rel='stylesheet' type='text/css'>
+        <link href="//maxcdn.bootstrapcdn.com/font-awesome/4.1.0/css/font-awesome.min.css" rel="stylesheet">       
+        
         <script src="js/vendor/modernizr-2.6.1.min.js"></script>       
     </head>
    
@@ -29,20 +28,20 @@
          <body>       
 
           <header class="Hello Middleman">
+    <div class="post-header">
+      <img class="Hello Middleman1">  
+      <h1 id = "post-title">Hello Middleman</h1>
+      <h3 id="post-date">21 March, 2014</h3> 
+      <a href="/"><i class="fa fa-home"></i></a>
+
+    </div> 
   </header>
-  <div class="post-wrap">
-    <nav id="post-nav">
-  	  <ul>
-  	    <li><a href="/">Home</a></li>
-  	  	<li><a href="../../../../">Journal</a></li>  	  
-      </ul>
-    </nav>
+  <div class="post-wrap">    
 
     <div id="post-container">
       <article>
         <div id="post-content">
-          <h1 id = "post-title">Hello Middleman</h1>
-          <h3 id="post-date">21 March, 2014</h3>      	
+              	
       	    <p>There’s a new version of Wordpress again with ever more options, great. It’s neat, a white, blank page for writing, new icons, whistles and bells, tons of new options. Having all these features can only be a good thing right? Right? Yet there will always come the  time when  you just get tired of clicking the upgrade button, especially when all you want to do is publish some content, some static content. Who would’ve thought that it’s now a possibility thanks to static page generators, and they’ve been here for quite a while now without me having known about them.</p>
 
 <blockquote>
@@ -76,7 +75,7 @@ Listen, for I have found the answers to your questions!&rdquo;</p>
 
 <p>A typical project directory would have files and folders as shown below. </p>
 
-<p><img title="Sample Screenshot" alt="Screenshot" src="../../../../../img/finder.png" /></p>
+<p><img title="Sample Screenshot" alt="Screenshot" src="../../../../../img/finder-18bc5ed3.png" /></p>
 
 <p>The &ldquo;source&rdquo; folder would be of special interest as it contains almost entirely all the files that we would be working with to deploy our static pages.</p>
 
@@ -110,7 +109,7 @@ Listen, for I have found the answers to your questions!&rdquo;</p>
 <pre class="highlight ruby"><span class="n">activate</span> <span class="ss">:directory_indexes</span>
 </pre>
 
-<p><img title="Sample Screenshot" alt="Screenshot" src="../../../../../img/finder2.png" /></p>
+<p><img title="Sample Screenshot" alt="Screenshot" src="../../../../../img/finder2-b84a5527.png" /></p>
 
 <h2>Markdown Settings</h2>
 
@@ -147,7 +146,7 @@ Listen, for I have found the answers to your questions!&rdquo;</p>
 
 <p>Opening the project directory, we can start with the index.html.erb, as shown below.</p>
 
-<p><img title="Sample Screenshot" alt="Screenshot" src="../../../../../img/finder3.png" /></p>
+<p><img title="Sample Screenshot" alt="Screenshot" src="../../../../../img/finder3-b05cd9f1.png" /></p>
 
 <h4>Frontmatter</h4>
 <pre class="highlight plaintext">---
@@ -294,7 +293,7 @@ end
 
 <p>Here&rsquo;s an image of my homepage</p>
 
-<p><img title="Sample Screenshot" alt="Screenshot" src="../../../../../img/finder4.png" /></p>
+<p><img title="Sample Screenshot" alt="Screenshot" src="../../../../../img/finder4-55f7dc18.png" /></p>
 
 <h4>Conclusions</h4>
 
@@ -304,11 +303,11 @@ end
 
 <h4>Further Readings</h4>
 
-<ol>
-<li><p>Lots of other information can be found on <a href="http://middlemanapp.com/basics/getting-started/">Middleman&rsquo;s Documentation Page</a> itself, well-written and always useful.  </p></li>
-<li><p>I found these blog posts to be also highly useful: <a href="http://fajitanachos.com/Goodbye-jekyll/">here</a> and <a href="http://juliepagano.com/blog/2013/11/10/site-redesign-using-middleman/">here</a>.</p></li>
-<li><p>Please feel free to also check my actual <a href="https://github.com/gamboajosephd/gamboajosephd.github.io">Github Page</a> repo to see the basic file structures, and copy codes when you need to. I realised that it&rsquo;s actually really helpful to check other people&rsquo;s implementation just to get the ground running. Finally, I suggest you keep on breaking stuff until you understand the concepts, until you like what you&rsquo;ve accomplished, until you can be proud enough to show it the world. Have fun learning!</p></li>
-</ol>
+<p>! Lots of other information can be found on <a href="http://middlemanapp.com/basics/getting-started/">Middleman&rsquo;s Documentation Page</a> itself, well-written and always useful.  </p>
+
+<p>! I found these blog posts to be also highly useful: <a href="http://fajitanachos.com/Goodbye-jekyll/">here</a> and <a href="http://juliepagano.com/blog/2013/11/10/site-redesign-using-middleman/">here</a>.</p>
+
+<p>Please feel free to also check my actual <a href="https://github.com/gamboajosephd/gamboajosephd.github.io">Github Page</a> repo to see the basic file structures, and copy codes when you need to. I realised that it&rsquo;s actually really helpful to check other people&rsquo;s implementation just to get the ground running. Finally, I suggest you keep on breaking stuff until you understand the concepts, until you like what you&rsquo;ve accomplished, until you can be proud enough to show it the world. Have fun learning!</p>
 
 <p>I know I&rsquo;ve missed a lot more on this post, and would love to hear what you have to say on the comments below.</p>
 
@@ -332,19 +331,6 @@ end
       </div>
     </div>   
   </div>
-  
-  <footer>
-  <section class="footer-1">  	
-    <ul>
-      <li class="social"><a href="https://github.com/gamboajosephd/"> <img src="../../../../../img/github.png" /> </a> </li>
-      <li class="social"><a href="https://twitter.com/jofsef/"> <img src="../../../../../img/twitter.png" /> </a> </li>
-    </ul>
-  </section>
-
-  <section class="footer-2">
-  	<h3> <a href="../../../../../">&#169 Life Carousel</a> </h3>  	
-  </section>
-</footer> 
 
       
 

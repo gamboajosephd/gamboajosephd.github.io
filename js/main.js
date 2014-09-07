@@ -1,7 +1,0 @@
-/*
-* EASYFADER - An Ultralight Fading Slideshow For Responsive Layouts
-* Version: 1.0
-* Author: Patrick Kunka
-* Copyright 2012-2013 Patrick Kunka
-*/
-!function(e){function t(e){for(var t=["Webkit","Moz","O","ms"],i=0;i<t.length;i++)if(t[i]+"Transition"in e.style)return"-"+t[i].toLowerCase()+"-";return"transition"in e.style?"":!1}var i={init:function(i){return this.each(function(){function n(e,i){function n(){p.eq(e).removeAttr("style"),c=i,l=!1,r()}if(l||e==i)return!1;if(l=!0,m.removeClass("active").eq(u).addClass("active"),p.eq(e).css("z-index",3),p.eq(i).css({"z-index":2,opacity:1}),t){var a={};a[t+"transition"]="opacity "+s.fadeDur+"ms",a.opacity=0,p.eq(e).css(a);{setTimeout(function(){n()},s.fadeDur)}}else p.eq(e).animate({opacity:0},s.fadeDur,function(){n()})}function a(e){"next"==e?(u=c+1,u>v-1&&(u=0)):"prev"==e?(u=c-1,0>u&&(u=v-1)):u=e,n(c,u)}function r(){o=setTimeout(function(){a("next")},s.slideDur)}var s={slideDur:7e3,fadeDur:800};i&&e.extend(s,i),this.config=s;var o,c,u,f=e(this),d=".slide",l=!1,p=f.find(d),v=p.length,y=f.find(".pager_list");t=t(f[0]);for(var g=0;v>g;g++)y.append('<li class="page" data-target="'+g+'">'+g+"</li>");f.find(".page").bind("click",function(){var t=e(this).attr("data-target");clearTimeout(o),a(t)});var m=y.find(".page");p.eq(0).css("opacity",1),m.eq(0).addClass("active"),c=0,r()})}};e.fn.easyFader=function(){return i.init.apply(this,arguments)}}(jQuery),$(function(){$("#Fader").easyFader({slideDur:6e3,fadeDur:800})});
