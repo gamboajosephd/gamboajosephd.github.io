@@ -61,7 +61,7 @@ configure :build do
   activate :minify_javascript
 
   # Enable cache buster
-  # activate :asset_hash
+  activate :asset_hash
 
   # Use relative URLs
   activate :relative_assets
@@ -80,6 +80,8 @@ end
 activate :directory_indexes
 
 set :relative_links, true
+
+page "/404.html", directory_index: false
 
 activate :syntax
 set :markdown_engine, :redcarpet

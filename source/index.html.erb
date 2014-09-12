@@ -1,25 +1,85 @@
 ---
-title: Home Page
+title: Life Carousel
 ---
-<div id="container">
-<%= partial "partials/header" %> 
-<section id="recent-posts">
-  <h2>My Recent Posts</h2>
-  	<ul>
-  	  <% blog.articles[0...3].each do |article| %>
-  	  <li>
-  	  	<h3 class="article-title"><%= link_to article.title, article %></h3>
-  	  	  <div class="article-date">
-  	  	    <%= article.date.strftime('%e %B, %Y') %> 
-  	  	  </div>
-          <div class="article-summary">
-            <%= article.summary(190, '  ...') %> 
-            <h5><%= link_to 'Read more', article %></h5>
-          </div>
-  	  </li>
-  	  <% end %> 
-  	</ul>  
-</section>
-</div>
-<%= partial "partials/footer"%> 
+
+<div id="container">  
+
+  <section id="header" class="bgFullWidth" data-stellar-background-ratio=".25">
+
+    <section class="headerBg">
+
+      <%= partial "partials/header"%> 
+
+      <div class="quote">
+          <blockquote>"For the rest of my life I want to reflect on what light is."</br><span>Albert Einstein</span></blockquote>
+        </div>
+      <div class="browseSvg">   
+        <a href="#about"><i class="fa fa-chevron-down"></i></a>
+      </div> 
+
+    </section>
+  </section>
+
+  <section class ="wrap-about" data-stellar-background-ratio=".25" data-stellar-offset-parent="true" data-stellar-vertical-offset="820">
+    
+      <div id="about">
+        <%= image_tag "joseph.jpg", class: "about-img" %> 
+        <h2>About Me</h2>
+          <p>Hi, my name is Joseph.</p>      
+          <p>I recently started learning Web Development using Rails and its underlying language Ruby, and hope that in time I will become good and it. In the future, I want to be able to make some interesting Web Applications. Thanks for visiting my page.
+          </p>
+          <p>Keep Learning!</p>
+      </div>
+
+  </section>
+
+  <section class="wrap" id="journal">
+
+    <h2>My Recent Posts</h2>
+
+    <div class="article-border">
+
+      <ul class="post-wrap">
+
+        <% blog.articles[0...3].each do |article| %>
+        
+          <li>  
+            <img src="" class="<%= "bg" + article.title %>">      
+              <h3 id="article-title"><span><%= link_to article.title, article %></span></h3>
+                <div class="article-date"> <%= article.date.strftime('%e %B, %Y') %> </div>
+
+                <div class="article-summary">
+                  <%= article.summary(110, '  ...') %> 
+                  <h5><%= link_to 'Read On  <i class="fa fa-angle-double-right"></i>', article %></h5>
+                </div>
+          </li>
+        
+        <% end %> 
+        
+      </ul> 
+    </div> <!-- article-border -->
+  </section>
+  
+  <footer>
+    <section class ="wrap">
+      <div id="contact">      
+        <h2>Contact Me</h2>            
+          <p>Please feel free to reach me on my social links below.</p>
+          <p>Kampai!</p>
+      </div>
+
+      <section class="footer-1">    
+        <ul>
+          <li class="social"><% link_to 'https://github.com/gamboajosephd/' do %> <i class="fa fa-github-alt"></i> <% end %> </li>
+          <li class="social"><% link_to 'https://twitter.com/jofsef/' do %> <i class="fa fa-twitter"></i> <% end %> </li>
+          <li><a href="mailto:josephdg.career@gmail.com"><i class="fa fa-envelope"></i></a></li>
+        </ul>
+      </section>
+    </section>
+  </footer>
+
+  <a href="#" class="scrollToTop"><i class="fa fa-angle-up"></i></a>
+
+</div> <!-- container -->
+
 

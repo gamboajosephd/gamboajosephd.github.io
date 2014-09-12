@@ -304,11 +304,11 @@ With Middleman's many similarities to Rails' functionalities because of the shar
 
 ####Further Readings
 
-1. Lots of other information can be found on [Middleman's Documentation Page](http://middlemanapp.com/basics/getting-started/) itself, well-written and always useful.  
+! Lots of other information can be found on [Middleman's Documentation Page](http://middlemanapp.com/basics/getting-started/) itself, well-written and always useful.  
 
-2. I found these blog posts to be also highly useful: [here](http://fajitanachos.com/Goodbye-jekyll/) and [here](http://juliepagano.com/blog/2013/11/10/site-redesign-using-middleman/).
+! I found these blog posts to be also highly useful: [here](http://fajitanachos.com/Goodbye-jekyll/) and [here](http://juliepagano.com/blog/2013/11/10/site-redesign-using-middleman/).
 
-3. Please feel free to also check my actual [Github Page](https://github.com/gamboajosephd/gamboajosephd.github.io) repo to see the basic file structures, and copy codes when you need to. I realised that it's actually really helpful to check other people's implementation just to get the ground running. Finally, I suggest you keep on breaking stuff until you understand the concepts, until you like what you've accomplished, until you can be proud enough to show it the world. Have fun learning!
+Please feel free to also check my actual [Github Page](https://github.com/gamboajosephd/gamboajosephd.github.io) repo to see the basic file structures, and copy codes when you need to. I realised that it's actually really helpful to check other people's implementation just to get the ground running. Finally, I suggest you keep on breaking stuff until you understand the concepts, until you like what you've accomplished, until you can be proud enough to show it the world. Have fun learning!
 
 I know I've missed a lot more on this post, and would love to hear what you have to say on the comments below.
 

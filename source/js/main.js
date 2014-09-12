@@ -1,119 +1,139 @@
-/*
-* EASYFADER - An Ultralight Fading Slideshow For Responsive Layouts
-* Version: 1.0
-* Author: Patrick Kunka
-* Copyright 2012-2013 Patrick Kunka
-*/
+$(document).ready(function(){
 
-(function($){
-    function prefix(el){
-        var prefixes = ["Webkit", "Moz", "O", "ms"];
-        for (var i = 0; i < prefixes.length; i++){
-            if (prefixes[i] + "Transition" in el.style){
-                return '-'+prefixes[i].toLowerCase()+'-'; 
-            };
-        }; 
-        return "transition" in el.style ? "" : false;
-    };
-    var methods = {
-        init: function(settings){
-            return this.each(function(){
-                var config = {
-                    slideDur: 7000,
-                    fadeDur: 800
-                };
-                if(settings){
-                    $.extend(config, settings);
-                };
-                this.config = config;
-                var $container = $(this),
-                    slideSelector = '.slide',
-                    fading = false,
-                    slideTimer,
-                    activeSlide,
-                    newSlide,
-                    $slides = $container.find(slideSelector),
-                    totalSlides = $slides.length,
-                    $pagerList = $container.find('.pager_list');
-                    prefix = prefix($container[0]);
-                function animateSlides(activeNdx, newNdx){
-                    function cleanUp(){
-                        $slides.eq(activeNdx).removeAttr('style');
-                        activeSlide = newNdx;
-                        fading = false;
-                        waitForNext();
-                    };
-                    if(fading || activeNdx == newNdx){
-                        return false;
-                    };
-                    fading = true;
-                    $pagers.removeClass('active').eq(newSlide).addClass('active');
-                    $slides.eq(activeNdx).css('z-index', 3);
-                    $slides.eq(newNdx).css({
-                        'z-index': 2,
-                        'opacity': 1
-                    });
-                    if(!prefix){
-                        $slides.eq(activeNdx).animate({'opacity': 0}, config.fadeDur,
-                        function(){
-                            cleanUp();
-                        });
-                    } else {
-                        var styles = {};
-                        styles[prefix+'transition'] = 'opacity '+config.fadeDur+'ms';
-                        styles['opacity'] = 0;
-                        $slides.eq(activeNdx).css(styles);
-                        var fadeTimer = setTimeout(function(){
-                            cleanUp();
-                        },config.fadeDur);
-                    };
-                };
-                function changeSlides(target){
-                    if(target == 'next'){
-                        newSlide = activeSlide + 1;
-                        if(newSlide > totalSlides - 1){
-                            newSlide = 0;
-                        }
-                    } else if(target == 'prev'){
-                        newSlide = activeSlide - 1;
-                        if(newSlide < 0){
-                            newSlide = totalSlides - 1;
-                        };
-                    } else {
-                        newSlide = target;
-                    };
-                    animateSlides(activeSlide, newSlide);
-                };
-                function waitForNext(){
-                    slideTimer = setTimeout(function(){
-                        changeSlides('next');
-                    },config.slideDur);
-                };
-                for(var i = 0; i < totalSlides; i++){
-                    $pagerList
-                        .append('<li class="page" data-target="'+i+'">'+i+'</li>');
-                };
-                $container.find('.page').bind('click',function(){
-                    var target = $(this).attr('data-target');
-                    clearTimeout(slideTimer);
-                    changeSlides(target);
-                });
-                var $pagers = $pagerList.find('.page');
-                $slides.eq(0).css('opacity', 1);
-                $pagers.eq(0).addClass('active');
-                activeSlide = 0;
-                waitForNext();
-            });
-        }
-    };
-    $.fn.easyFader = function(settings){
-          return methods.init.apply(this, arguments);
-    };
-})(jQuery);
+  //Parallax Effect
 
-$(function(){
-  $('#Fader').easyFader({
-    slideDur: 6000,
-    fadeDur: 800
+  /*
+
+  var background = $('.bgFullWidth');
+
+  var docwindow = $(window);
+  var measure = $('#measure');
+
+  function newPos(pos, adjust, ratio){
+      return ((pos - adjust) * ratio)  + "px";
+  }
+      
+  function move(){
+      
+      //var pos = measure.offset().top;
+      var pos = docwindow.scrollTop();
+          
+      bgFullWidth.css({'top' : newPos(pos, 0, -0.5)});//.queue('fx');
+          
+  }
+      
+      
+  var didScroll = false;
+      
+  $(window).scroll(function(){
+      didScroll = true;
   });
+   
+  setInterval(function() {
+      if (didScroll) {
+          didScroll = false;
+          move();
+      }
+  }, 10); */
+
+  //http://code.tutsplus.com/tutorials/simple-parallax-scrolling-technique--net-27641
+
+  /*
+  var $window = $(window); //You forgot this line in the above example
+
+    $('section[data-type="background"]').each(function(){
+      var $bgobj = $(this); // assigning the object
+      $(window).scroll(function() {     
+      var yPos = -($window.scrollTop() / $bgobj.data('speed'));
+      //var yPos = -(($window.scrollTop() - $bgobj.offset().top) / $bgobj.data('speed'));
+      // Put together our final background position
+      var coords = '0, '+ yPos + 'px,' + ' 0';
+      // Move the background
+      $bgobj.css({ transform: 'translate3d('coords')' });
+      });
+  }); */
+
+  //Scroll to Top
+  //Check to see if the window is top if not then display button
+  $(window).scroll(function(){
+    if ($(this).scrollTop() > 400) {
+      $('.scrollToTop').fadeIn();
+    } else {
+      $('.scrollToTop').fadeOut();
+    }
+  });
+  
+  //Click event to scroll to top
+  $('.scrollToTop').click(function(){
+    $('html, body').animate({scrollTop : 0},800);
+    return false;
+  }); 
+
+  // Single Page Scroll
+  //http://anythinggraphic.net/sticky-navigation-and-scrolling/
+
+   $('a').click(function(){
+  
+    var el = $(this).attr('href');
+    var elWrapped = $(el);
+    
+    scrollToDiv(elWrapped,40);
+
+    $(".selected").removeClass("selected");
+    $(this).addClass("selected");
+
+    return false;
+    
+  });
+    
+  function scrollToDiv(element,navheight){
+    
+    var offset = element.offset();
+    var offsetTop = offset.top;
+    var totalScroll = offsetTop-navheight;
+    
+    $('body,html').animate({
+    scrollTop: totalScroll
+    }, 700);  
+  }
+
+  //Sticky Nav Bar
+
+  $(window).scroll(function() {
+  if ($(this).scrollTop() > 600){  
+      $('#nav-cont').addClass("sticky");   
+    }
+    else{
+      $(".selected").removeClass("selected");
+      $(this).addClass("selected");
+      $('#nav-cont').removeClass("sticky");
+    }
+  }); 
+
+});
+
+var isMobile = {
+    Android: function() {
+        return navigator.userAgent.match(/Android/i);
+    },
+    BlackBerry: function() {
+        return navigator.userAgent.match(/BlackBerry/i);
+    },
+    iOS: function() {
+        return navigator.userAgent.match(/iPhone|iPad|iPod/i);
+    },
+    Opera: function() {
+        return navigator.userAgent.match(/Opera Mini/i);
+    },
+    Windows: function() {
+        return navigator.userAgent.match(/IEMobile/i);
+    },
+    any: function() {
+        return (isMobile.Android() || isMobile.BlackBerry() || isMobile.iOS() || isMobile.Opera() || isMobile.Windows());
+    }
+};
+jQuery(document).ready(function(){
+    if( !isMobile.any() ){
+        $(window).stellar();        
+    }
 });

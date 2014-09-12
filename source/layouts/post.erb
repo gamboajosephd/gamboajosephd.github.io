@@ -1,29 +1,33 @@
 <% wrap_layout :layout do %>
-  <header class="<%= current_page.title %>">
+
+  <header class="<%= current_page.title %>" data-stellar-background-ratio=".25" data-stellar-offset-parent="true" data-stellar-horizontal-offset="50">
+    <section class="post-header">
+      <img src="" class="<%= "bg" + current_page.title %>">  
+      <h1 id = "post-title"><%= current_page.title %></h1>
+      <h3 id="post-date"><%= current_article.date.strftime('%e %B, %Y') %></h3> 
+      <a href="/"><i class="fa fa-home"></i></a>
+    </section> 
   </header>
-  <div class="post-wrap">
-    <nav id="post-nav">
-  	  <ul>
-  	    <li><a href="/">Home</a></li>
-  	  	<li><%= link_to "Journal", "/journal.html" %></li>  	  
-      </ul>
-    </nav>
+
+  <div class="post-wrap">    
 
     <div id="post-container">
       <article>
-        <div id="post-content">
-          <h1 id = "post-title"><%= current_page.title %></h1>
-          <h3 id="post-date"><%= current_article.date.strftime('%e %B, %Y') %></h3>      	
-      	    <%= yield %>
+        <div id="post-content">              	
+      	    <%= yield %>            
         </div> 
-      </article>
-      
+      </article>  
+
       <div id="disqus">
         <%= disqus %>
-      </div>
-    </div>   
-  </div>
-  
-  <%= partial "partials/footer"%> 
+      </div>       
+    </div> <!-- Post Container -->    
+  </div> <!-- Post Wrap -->
+
+  <a href="#" class="scrollToTop"><i class="fa fa-angle-up"></i></a>
 
 <% end %> 
+
+
+
+

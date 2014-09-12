@@ -31,7 +31,7 @@ But one book that would always have a space in my bookshelf would be another cla
 
 >-Emily Brontë, Wuthering Heights
 
-At the end of all these revelations on books, a final begging question, how do I plan to use these books to help write my first code. I guess I would never have a straight answer to that. But I believe that in all these stories, both fiction and real, is an underlying motivation, a deep passion that feeds the creative soul, that when we assume other’s perspectives, we are able to gain fresher ways to solve problems.
+At the end of all these revelations on books, a final begging question, how do I plan to use these books to help write my first code. I guess I would never have a straight answer to that. But I believe that in all these stories, both fiction and real, is an underlying motivation, a deep passion that feeds the creative soul, that when we assume others' perspectives, we are able to gain fresher ways to solve problems.
 
 I hope in the future I would be a real good web developer and designer, because that is really something I’d love to be doing. But I know that I would always read books, and keep on learning new skills. It is that passion for learning itself that I know will help me succeed.
 

@@ -26,10 +26,10 @@ Our PirateBox machine would only consist of a very inexpensive wireless router f
 
 Loading PirateBox onto the TP-Link router is pretty much straightforward. The installation process generally involves the following steps.
 
-1. Flash OpenWRT firmware within the Router's default upgrade firmware tool.
+  a. Flash OpenWRT firmware within the Router's default upgrade firmware tool.
 
+  b. Install PirateBox packages on top of OpenWRT.
 
-2. Install PirateBox packages on top of OpenWRT.
 
 I have successfully installed PirateBox thanks to the guy who's posted the following link.
 
