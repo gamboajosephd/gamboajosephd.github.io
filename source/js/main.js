@@ -1,58 +1,5 @@
 $(document).ready(function(){
-
-  //Parallax Effect
-
-  /*
-
-  var background = $('.bgFullWidth');
-
-  var docwindow = $(window);
-  var measure = $('#measure');
-
-  function newPos(pos, adjust, ratio){
-      return ((pos - adjust) * ratio)  + "px";
-  }
-      
-  function move(){
-      
-      //var pos = measure.offset().top;
-      var pos = docwindow.scrollTop();
-          
-      bgFullWidth.css({'top' : newPos(pos, 0, -0.5)});//.queue('fx');
-          
-  }
-      
-      
-  var didScroll = false;
-      
-  $(window).scroll(function(){
-      didScroll = true;
-  });
-   
-  setInterval(function() {
-      if (didScroll) {
-          didScroll = false;
-          move();
-      }
-  }, 10); */
-
-  //http://code.tutsplus.com/tutorials/simple-parallax-scrolling-technique--net-27641
-
-  /*
-  var $window = $(window); //You forgot this line in the above example
-
-    $('section[data-type="background"]').each(function(){
-      var $bgobj = $(this); // assigning the object
-      $(window).scroll(function() {     
-      var yPos = -($window.scrollTop() / $bgobj.data('speed'));
-      //var yPos = -(($window.scrollTop() - $bgobj.offset().top) / $bgobj.data('speed'));
-      // Put together our final background position
-      var coords = '0, '+ yPos + 'px,' + ' 0';
-      // Move the background
-      $bgobj.css({ transform: 'translate3d('coords')' });
-      });
-  }); */
-
+  
   //Scroll to Top
   //Check to see if the window is top if not then display button
   $(window).scroll(function(){
